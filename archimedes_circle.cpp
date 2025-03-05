@@ -52,7 +52,7 @@ int main() {
     }
 
     // Calculate pi approximation
-    if (iterations and iterations >= 3 and iterations <= 1000000) {
+    if (iterations && iterations >= 3 && iterations <= 1000000) {
         // we add a lot of decimal places so that
         // it doesn't round down to 0
         
