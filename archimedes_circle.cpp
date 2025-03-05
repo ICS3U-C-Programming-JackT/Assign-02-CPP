@@ -28,9 +28,9 @@ const std::string MESSAGES_TO_PRINT[4] = {
     "How many decimals do you want to round it to? (Integer 1-12)\n"};
 
 int main() {
-    std::cout << std::fixed << std::setprecision(100000000);
-    int iterations = 1000000;
-    double piApprox;
+    // variables
+    int iterations;
+    float piApprox;
     float radius;
     int roundTo;
     float marginOfError;
@@ -38,7 +38,7 @@ int main() {
     // Display startup messages
     for (int i = 1; i <= 4; i++) {
         // Print message at i index
-        std::cout << MESSAGES_TO_PRINT[i - 1] << std::endl;  
+        std::cout << MESSAGES_TO_PRINT[i - 1] << std::endl;
 
         if (i == 2) {
             std::cin >> iterations;  // Ask for pi approx iterations
@@ -52,16 +52,14 @@ int main() {
     }
 
     // Calculate pi approximation
-    if (iterations 
-        and iterations >= 3 
-        and iterations <= 1000000 
-    ) {
+    if (iterations and iterations >= 3 and iterations <= 1000000) {
         // we add a lot of decimal places so that
         // it doesn't round down to 0
-
+        
         float innerAng = 360.000000 / iterations;
         float outerAng = (180.000000 - innerAng) / 2.000000;
         float outerSideLength = sin(RADIAN * innerAng) / sin(RADIAN * outerAng);
+        //Calculate pi approximation using stats of theoretical triangle
         piApprox = outerSideLength * (iterations) / 2;
     } else {
         piApprox = 0;
@@ -72,11 +70,13 @@ int main() {
         float circumference = 2 * piApprox * radius;      // circumference of your circle
         float area = piApprox * pow(radius, 2);           // circumference of your circle
         std::cout << std::fixed << std::setprecision(roundTo);
-
+        
+        //Display circumference, area and margin of error
         std::cout << "The circumference of your circle is " << circumference << "cm" << std::endl;
         std::cout << "The area of your circle is " << area << "cm^2" << std::endl;
         std::cout << "The margin of error for your approximation was: " << marginOfError << "%" << std::endl;
     } else {
+        //restart program if iterations is invalid
         std::cout << "Please enter valid numbers!" << std::endl;
         main();
     }
