@@ -1,12 +1,12 @@
 ##################################################
 
-# Run Mr Raffin's Super Linter against code base #
+# Run Mr Coxall's Super Linter against code base #
 
 ##################################################
 
 ---
 
-name: Ms Raffin's Super Linter
+name: Mr Coxall's Super Linter
 
 on: [push, pull_request]
 
@@ -14,7 +14,7 @@ jobs:
 
   run-linters:
 
-    name: Ms Raffin's Super Linter
+    name: Mr Coxall's Super Linter
 
     runs-on: ubuntu-latest
 
